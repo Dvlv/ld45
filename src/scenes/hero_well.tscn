@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://script/hero_well.gd" type="Script" id=1]
+[ext_resource path="res://assets/art/well-1.png" type="Texture" id=2]
+[ext_resource path="res://assets/art/civ-orange.png" type="Texture" id=3]
+[ext_resource path="res://assets/art/plainman-front.png" type="Texture" id=4]
+[ext_resource path="res://scenes/DialogueBox.tscn" type="PackedScene" id=5]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="bg" type="Sprite" parent="."]
+position = Vector2( 512, 300 )
+texture = ExtResource( 2 )
+
+[node name="civ" type="Sprite" parent="."]
+position = Vector2( 607.629, 462.247 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 3 )
+
+[node name="plainman" type="Sprite" parent="."]
+position = Vector2( 884.499, 460.469 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 4 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DialogueBox" parent="CanvasLayer" instance=ExtResource( 5 )]
+

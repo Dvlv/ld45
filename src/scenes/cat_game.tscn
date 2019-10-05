@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://script/cat_game.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/tree.png" type="Texture" id=2]
@@ -7,6 +7,9 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 715.083, 10 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 90.0255, 360.819 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 77.2479, 13.5424 )
@@ -46,7 +49,6 @@ position = Vector2( 515.86, -143.124 )
 texture = ExtResource( 2 )
 
 [node name="platforms" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( -63, 0 )
 
 [node name="floor" type="StaticBody2D" parent="platforms"]
@@ -58,6 +60,26 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/floor"]
 shape = SubResource( 1 )
+
+[node name="wall-l" type="StaticBody2D" parent="platforms"]
+editor/display_folded = true
+position = Vector2( -174.421, 178.307 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/wall-l"]
+shape = SubResource( 12 )
+
+[node name="wall-r" type="StaticBody2D" parent="platforms"]
+editor/display_folded = true
+position = Vector2( 1054.48, 174.791 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/wall-r"]
+shape = SubResource( 12 )
 
 [node name="first branch" type="StaticBody2D" parent="platforms"]
 editor/display_folded = true

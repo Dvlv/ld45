@@ -3,14 +3,15 @@ extends Control
 signal finished_displaying
 
 onready var TIMER = $Timer
-onready var NAME = $VBoxContainer/MarginContainer/NinePatchRect/Name
-onready var TEXT = $VBoxContainer/MarginContainer/NinePatchRect/Text
-onready var ACCEPT = $VBoxContainer/MarginContainer/NinePatchRect/Accept
+onready var NAME = $VBoxContainer/MarginContainer4/NinePatchRect/Name
+onready var TEXT = $VBoxContainer/MarginContainer4/NinePatchRect/Text
+onready var ACCEPT = $VBoxContainer/MarginContainer4/NinePatchRect/Accept
 
 var listening = false
 
 func _ready():
     ACCEPT.visible = false
+    TIMER.connect("timeout", TEXT, "_on_Timer_timeout")
 
 func _process(delta):
     if listening:

@@ -9,8 +9,6 @@ var SUPER_STRENGTH = "strength"
 var JUMP = "jump"
 #warning-ignore:unused_class_variable
 var LASER = "laser"
-#warning-ignore:unused_class_variable
-var SPEED = "speed"
 
 var has_trident = false
 
