@@ -44,7 +44,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -71,16 +71,14 @@
            height="111.42859"
            x="377.14285"
            y="246.8054" /></flowRegion><flowPara
-         id="flowPara827"></flowPara></flowRoot>    <text
-       xml:space="preserve"
+         id="flowPara827" /></flowRoot>    <g
+       aria-label="O"
        style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="106.75189"
-       y="87.232964"
-       id="text999"><tspan
-         sodipodi:role="line"
-         id="tspan997"
-         x="106.75189"
-         y="87.232964"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.75555611px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332">O</tspan></text>
+       id="text999">
+      <path
+         d="m 114.53643,74.152625 q -2.12218,0 -3.37619,1.581988 -1.24437,1.581987 -1.24437,4.311881 0,2.720248 1.24437,4.302236 1.25401,1.581987 3.37619,1.581987 2.12218,0 3.3569,-1.581987 1.24437,-1.581988 1.24437,-4.302236 0,-2.729894 -1.24437,-4.311881 -1.23472,-1.581988 -3.3569,-1.581988 z m 0,-1.581988 q 3.02893,0 4.84243,2.035362 1.81349,2.025716 1.81349,5.440495 0,3.405133 -1.81349,5.440495 -1.8135,2.025716 -4.84243,2.025716 -3.03857,0 -4.86172,-2.025716 -1.8135,-2.025716 -1.8135,-5.440495 0,-3.414779 1.8135,-5.440495 1.82315,-2.035362 4.86172,-2.035362 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.75555611px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332"
+         id="path893" />
+    </g>
   </g>
 </svg>

@@ -12,13 +12,7 @@ var LASER = "laser"
 #warning-ignore:unused_class_variable
 var SPEED = "speed"
 
-func load_to_town():
-	var player = get_node("/root/Node2D/Player")
-	player.is_facing_left = true
-	player.can_move = false
-	player.play_run_animation()
-	player.face_left()
-
+var has_trident = false
 
 
 func give_power(pwr):

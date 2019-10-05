@@ -4,7 +4,7 @@ var GRAVITY = 19.8
 var UP = Vector2(0, -1)
 var JUMP_STRENGTH = -375
 var ACCELERATION = 40
-var MOVE_SPEED = 100
+var MOVE_SPEED = 200
 
 onready var SPRITE = get_node('Sprite')
 
@@ -18,7 +18,7 @@ var move = Vector2(0, GRAVITY)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if global.has_power(global.SPEED):
-		MOVE_SPEED = 200
+		MOVE_SPEED = 400
 	if global.has_power(global.JUMP):
 		JUMP_STRENGTH = -750
 	if global.has_power(global.LASER):
