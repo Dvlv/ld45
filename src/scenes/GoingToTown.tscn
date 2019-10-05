@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://script/GoingToTown.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/hubworld.png" type="Texture" id=2]
-[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/art/rock.png" type="Texture" id=3]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/DialogueBox.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 409.16, 15.301 )
@@ -15,6 +17,12 @@ extents = Vector2( 393.864, 32.7655 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 353.15, 32.7655 )
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 195.781
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 169.408, 164.132 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -67,9 +75,29 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/bottom-l"]
 shape = SubResource( 4 )
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
+[node name="Boulder" type="Sprite" parent="."]
+position = Vector2( 644.94, 458.953 )
+scale = Vector2( 0.747409, 0.705929 )
+texture = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="Boulder"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boulder/Area2D"]
+shape = SubResource( 5 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boulder"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boulder/StaticBody2D"]
+shape = SubResource( 6 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1200.85, 437.977 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DialogueBox" parent="CanvasLayer" instance=ExtResource( 5 )]
+visible = false
 

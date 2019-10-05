@@ -11,6 +11,11 @@ var JUMP = "jump"
 var LASER = "laser"
 
 
+var has_caught_chickens = false
+var has_pulled_horse = false
+var has_moved_boulder = false
+
+
 func give_power(pwr):
 	powers.append(pwr)
 

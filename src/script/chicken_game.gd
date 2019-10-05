@@ -18,7 +18,9 @@ func on_chicken_catch():
 
 func end_scene():
 	global.give_power(global.JUMP)
-	print("end")
+	global.has_caught_chickens = true
+#warning-ignore:return_value_discarded
+	get_tree().change_scene_to(load("res://scenes/pre_chicken.tscn"))
 
 
 

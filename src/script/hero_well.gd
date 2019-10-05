@@ -94,6 +94,7 @@ func after_questions():
 		{"target": self, "method": "show_trident", "args": []},
 		{"target": DB, "method": "show_dialogue", "args": ["PlainMan", "Neat."]},
 		{"target": DB, "method": "show_dialogue", "args": ["Narrator", "PlainMan picked up the trident, and felt a strong power seep through his body."]},
+		{"target": self, "method": "close_up", "args": []},
 		{"target": DB, "method": "show_dialogue", "args": ["PlainMan", "I feel so powerful!\nHaha, Hahaha, AHAHAHAHAHAHAHAHAH!!!"]},
 		{"target": DB, "method": "show_dialogue", "args": ["PlainMan", "Look out Showboater, here I come!"]},
 		{"target": self, "method": "end_scene", "args": []},
@@ -104,6 +105,12 @@ func show_trident():
 	$civ.visible = true
 	$plainman.visible = true
 	$bg.texture = load("res://assets/art/well-1.png")
+	emit_signal("finished_displaying")
+
+func close_up():
+	$civ.visible = false
+	$plainman.visible = false
+	$bg.texture = load("res://assets/art/well-3.png")
 	emit_signal("finished_displaying")
 
 func load_main_scene():
