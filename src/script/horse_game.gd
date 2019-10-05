@@ -23,7 +23,7 @@ var current_key = null
 var correct_counter = 0
 var anim_change_thresh = 5
 var anim_change_step = 0
-var correct_limit = 100
+var correct_limit = 50
 
 var current_horse_anim = "horse-1"
 
@@ -36,7 +36,7 @@ func _ready():
 
 
 func _input(event):
-	if event is InputEventKey:
+	if event is InputEventKey and event.pressed and not event.is_echo():
 		if event.scancode == current_key:
 			correct_counter += 1
 			anim_change_step += 1
@@ -53,6 +53,7 @@ func _input(event):
 		else:
 			correct_counter -= 1
 
+		$Progress.text = "Progress: " + str(correct_counter) + "/50"
 		if correct_counter > correct_limit:
 			end_scene()
 

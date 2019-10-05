@@ -14,9 +14,11 @@ texture = ExtResource( 2 )
 [node name="background" type="Sprite" parent="."]
 
 [node name="KeySwitch" type="Timer" parent="."]
-wait_time = 2.0
+process_mode = 0
+wait_time = 2.5
 
 [node name="RoundBegin" type="Timer" parent="."]
+one_shot = true
 
 [node name="CurrentKey" type="Sprite" parent="."]
 position = Vector2( 510.922, 146.817 )
@@ -28,4 +30,11 @@ margin_top = 45.2632
 margin_right = 620.948
 margin_bottom = 59.2632
 text = "Mash this key to pull the horse:"
+
+[node name="Progress" type="Label" parent="."]
+margin_left = 773.0
+margin_top = 42.0
+margin_right = 975.0
+margin_bottom = 56.0
+text = "Progress: 0 / 50"
 
