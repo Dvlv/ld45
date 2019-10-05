@@ -6,9 +6,39 @@ chrome dinosaur like game to head to ra city.
 
 select jobs with newspaper-esque ui
 
-rescue radioactive cat from tree - gain claws power.
-rescue dog from tree by jumping on trampolines - gain flight
+rescue radioactive cat from tree - gain speed power.
+catch flying chickens - gain super jump
 rescue horse by carrying it a long way - gain super strength
 read to children - gain laser eyes
 
 final fight with the showboater - need all powers
+
+
+
+reading minigame :
+    texturebuttons float up into view, click them to add a word to the screen. Make a sentence of 6 + words and end with a full stop.
+
+horse game:
+    button appears at bottom of screen, mash button to drag horse
+
+cat game:
+    jumping platformer thing
+
+chickens:
+    fly left - right in air. Jump and collide to catch
+
+
+
+
+to draw:
+    Horse being pulled - left and right step
+    Horse pulling back - left and right step
+    Keys
+
+    cat
+    tree
+    chicken
+    player
+    showboater
+    reading scene
+    backgrounds

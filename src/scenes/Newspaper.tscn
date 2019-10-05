@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/themes/newspaper_button_theme.tres" type="Theme" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="Button" type="Button" parent="."]
+margin_right = 66.0
+margin_bottom = 42.0
+theme = ExtResource( 1 )
+text = "Job One"
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 171.0
+margin_top = 97.85
+margin_right = 237.0
+margin_bottom = 139.85
+theme = ExtResource( 1 )
+text = "Job Two"
+
