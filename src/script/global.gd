@@ -10,8 +10,6 @@ var JUMP = "jump"
 #warning-ignore:unused_class_variable
 var LASER = "laser"
 
-var has_trident = false
-
 
 func give_power(pwr):
 	powers.append(pwr)
@@ -42,7 +40,8 @@ func animated_scene(structure):
 
     var current = frames[0]
 
-    current["target"].connect("finished_displaying", self, "tie_together_frames")
+    if not current["target"].is_connected("finished_displaying", self, "tie_together_frames"):
+        current["target"].connect("finished_displaying", self, "tie_together_frames")
 
     # begin executing the chain by calling the first item's method
     current["target"].callv(current["method"], current["args"])

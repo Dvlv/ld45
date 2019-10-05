@@ -17,8 +17,6 @@ var move = Vector2(0, GRAVITY)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if global.has_power(global.SPEED):
-		MOVE_SPEED = 400
 	if global.has_power(global.JUMP):
 		JUMP_STRENGTH = -750
 	if global.has_power(global.LASER):
