@@ -7,8 +7,9 @@ var ACCELERATION = 40
 var MOVE_SPEED = 200
 
 onready var SPRITE = get_node('Sprite')
+onready var TRIDENT = preload("res://scenes/Trident.tscn")
 
-var forced_anim = null
+var has_trident = false
 var is_facing_left = false
 export var can_move = true
 export var can_laser = false
@@ -21,8 +22,6 @@ func _ready():
 		JUMP_STRENGTH = -750
 	if global.has_power(global.LASER):
 		can_laser = true
-	if global.has_power(global.SUPER_STRENGTH):
-		pass # TODO attacking
 
 	if is_facing_left:
 		SPRITE.flip_h = true
@@ -34,21 +33,24 @@ func _physics_process(delta):
 
 	if is_on_floor():
 
-		if Input.is_action_pressed("ui_jump"):
-			ground_jump()
-
 		if can_move:
-			if Input.is_action_pressed("ui_left"):
+
+			if Input.is_action_pressed("ui_jump"):
+				ground_jump()
+
+			elif Input.is_action_pressed("ui_left"):
 				ground_move_left()
 
 			elif Input.is_action_pressed("ui_right"):
 				ground_move_right()
 
+			elif Input.is_action_pressed("ui_attack") and can_laser:
+				if not has_trident:
+					trident()
+
 			else:
 				ground_idle()
 
-		if forced_anim:
-			SPRITE.play(forced_anim)
 
 	else:
 		if can_move:
@@ -96,11 +98,21 @@ func air_move_right():
 	SPRITE.flip_h = false
 	is_facing_left = false
 
+func trident():
+	var trident = TRIDENT.instance()
+	trident.position = Vector2(0,0)
+	if is_facing_left:
+		trident.set_dir_mod(-1)
+	else:
+		trident.set_dir_mod(1)
 
+	trident.connect("returned", self, "on_trident_return")
 
-func play_run_animation():
-	forced_anim = "run"
-	SPRITE.play("run")
+	self.add_child(trident)
+	has_trident = true
+
+func on_trident_return():
+	has_trident = false
 
 func face_left():
 	SPRITE.flip_h = true

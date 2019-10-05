@@ -17,6 +17,7 @@ func _physics_process(delta):
 		self.queue_free()
 
 func set_dir_mod(dm):
+	dir_mod = dm
 	if dm == 1:
 		$Sprite.flip_h = true
 	else:
