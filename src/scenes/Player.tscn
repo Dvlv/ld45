@@ -2,10 +2,10 @@
 
 [ext_resource path="res://script/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/plainman-front.png" type="Texture" id=2]
-[ext_resource path="res://assets/art/plainman-jump.png" type="Texture" id=3]
-[ext_resource path="res://assets/art/plainman-run-1.png" type="Texture" id=4]
-[ext_resource path="res://assets/art/plainman-run-3.png" type="Texture" id=5]
-[ext_resource path="res://assets/art/plainman-run-2.png" type="Texture" id=6]
+[ext_resource path="res://assets/art/plainman-run-1.png" type="Texture" id=3]
+[ext_resource path="res://assets/art/plainman-run-3.png" type="Texture" id=4]
+[ext_resource path="res://assets/art/plainman-run-2.png" type="Texture" id=5]
+[ext_resource path="res://assets/art/plainman-jump.png" type="Texture" id=6]
 [ext_resource path="res://assets/sounds/trident.ogg" type="AudioStream" id=7]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -15,15 +15,15 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
-"loop": false,
-"name": "jump",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "run",
 "speed": 9.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": false,
+"name": "jump",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]

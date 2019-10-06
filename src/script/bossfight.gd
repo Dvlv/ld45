@@ -21,7 +21,7 @@ func _ready():
 func showboater_dmg():
 	sb_hp -= 1
 	if sb_hp <= 0:
-		print("sb dies")
+		get_tree().change_scene_to(load("res://scenes/BadEnd.tscn"))
 
 	randomize()
 	next_spawn = spawns[randi() % spawns.size()]
@@ -37,6 +37,6 @@ func showboater_dmg():
 func player_dmg():
 	player_hp -= 1
 	if player_hp <= 0:
-		print("player dies")
+		get_tree().change_scene_to(load("res://scenes/GooEnd.tscn"))
 
 	$CanvasLayer/php.text = "Player HP: " + str(player_hp)

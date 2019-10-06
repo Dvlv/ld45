@@ -15,6 +15,7 @@ var has_trident = false
 var is_facing_left = false
 export var can_move = true
 export var can_laser = false
+var force_stop = false
 
 var move = Vector2(0, GRAVITY)
 
@@ -67,7 +68,8 @@ func _physics_process(delta):
 		if SPRITE.animation != "jump":
 			SPRITE.play("jump")
 
-	move = move_and_slide(move, UP)
+	if not force_stop:
+		move = move_and_slide(move, UP)
 
 
 
@@ -125,10 +127,13 @@ func face_left():
 
 
 func on_area_enter(area):
-	if area.name == "Wave" or area.name == "Showboater":
+
+	if "Wave" in area.name or area.name == "Showboater":
 		emit_signal("player_dmg")
 		$Sprite.modulate = "808000"
 		$colourtimer.start()
+		if "Wave" in area.name:
+			area.queue_free()
 
 func revert_colour():
 	$Sprite.modulate = "ffffff"

@@ -15,7 +15,6 @@ func _ready():
 	$teleports/chicken.connect("body_entered", self, "load_chicken")
 	$teleports/well.connect("body_entered", self, "load_well")
 
-	$Boulder.queue_free()
 
 
 func on_boulder(body):

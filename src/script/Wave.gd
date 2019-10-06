@@ -3,7 +3,7 @@ extends Node2D
 var moves = false
 var dir_mod = 1
 
-export var speed = 10
+export var speed = 8
 
 
 func _physics_process(delta):

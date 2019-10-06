@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://script/cat_game.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/tree.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/art/cat.png" type="Texture" id=4]
+[ext_resource path="res://scenes/DialogueBox.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 715.083, 10 )
@@ -213,4 +214,9 @@ texture = ExtResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cat"]
 position = Vector2( 719.96, -242.117 )
 shape = SubResource( 12 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DialogueBox" parent="CanvasLayer" instance=ExtResource( 5 )]
+visible = false
 
