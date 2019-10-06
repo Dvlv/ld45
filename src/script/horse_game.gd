@@ -42,6 +42,7 @@ func _input(event):
 			anim_change_step += 1
 			if anim_change_step >= anim_change_thresh:
 				anim_change_step = 0
+				$background.position.x = $background.position.x - 10
 
 				if current_horse_anim == "horse-1":
 					$PlayerAndHorse.texture = frame2
