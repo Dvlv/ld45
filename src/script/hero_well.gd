@@ -8,13 +8,19 @@ func _ready():
 
 	bind_buttons()
 
-	global.animated_scene([
-		{"target": DB, "method": "show_dialogue", "args": ["Wise Man", "Welcome to Hero Well."]},
-		{"target": DB, "method": "show_dialogue", "args": ["Wise Man", "In order to bathe in the well, you will need to answer three tough riddles."]},
-		{"target": DB, "method": "show_dialogue", "args": ["Wise Man", "Riddle One"]},
-		{"target": DB, "method": "show_dialogue", "args": ["Wise Man", "I have hands, but cannot eat a sandwich. \nI have a face but cannot wear lipstick\nI produce ticks, but I am not a bug factory.\nWhat am I?"]},
-		{"target": self, "method": "show_riddle_one", "args": []},
-	])
+	if global.has_ans_r_2:
+		tell_riddle_three()
+	elif global.has_ans_r_1:
+		tell_riddle_two()
+	else:
+
+		global.animated_scene([
+			{"target": DB, "method": "show_dialogue", "args": ["Wise Man", "Welcome to Hero Well."]},
+			{"target": DB, "method": "show_dialogue", "args": ["Wise Man", "In order to bathe in the fountain, you will need to answer three tough riddles."]},
+			{"target": DB, "method": "show_dialogue", "args": ["Wise Man", "Riddle One"]},
+			{"target": DB, "method": "show_dialogue", "args": ["Wise Man", "I have hands, but cannot eat a sandwich. \nI have a face but cannot wear lipstick\nI produce ticks, but I am not a bug factory.\nWhat am I?"]},
+			{"target": self, "method": "show_riddle_one", "args": []},
+		])
 
 func bind_buttons():
 	$Answers/Riddle1/VBoxContainer/Button2.connect("pressed", self, "tell_riddle_two")
@@ -48,8 +54,8 @@ func show_riddle_three():
 
 func tell_riddle_two():
 	$Answers/Riddle1.visible = false
+	global.has_ans_r_1 = true
 	global.animated_scene([
-		{"target": DB, "method": "show_dialogue", "args": ["Wise Man", "That is correct."]},
 		{"target": DB, "method": "show_dialogue", "args": ["Wise Man", "Prepare for Riddle Two."]},
 		{"target": DB, "method": "show_dialogue", "args": ["Wise Man", "What is black and white, and cooler than ice?"]},
 		{"target": self, "method": "show_riddle_two", "args": []},
@@ -57,10 +63,10 @@ func tell_riddle_two():
 
 func tell_riddle_three():
 	$Answers/Riddle2.visible = false
+	global.has_ans_r_2 = true
 	global.animated_scene([
-		{"target": DB, "method": "show_dialogue", "args": ["Wise Man", "Right again!"]},
 		{"target": DB, "method": "show_dialogue", "args": ["Wise Man", "Last one."]},
-		{"target": DB, "method": "show_dialogue", "args": ["Wise Man", "A boat hits a wave and three passengers fall overboard.\nThe captain lets down a 3 meter length of rope and it just about reaches the water.\nThe first passenger climbs back aboard, but the rope snaps.\nSuddenly, another wave pushes the boat out further, to waters 4 metres deeper.\nThe captain rescues the second passenger with another rope, which also breaks. \nAnother wave hits, pushing the boat 4 more meters out.\nHow long a rope does the captain need to save the final passenger?"]},
+		{"target": DB, "method": "show_dialogue", "args": ["Wise Man", "A boat hits a wave and two passengers fall overboard.\n The captain throws down a 3 meter rope and it barely touches the water.\n The first passenger climbs up, but the rope breaks.\n Another wave pushes the boat out to waters 4 meters deeper.\n How long a rope does the captain need to save the other passenger?"]},
 		{"target": self, "method": "show_riddle_three", "args": []},
 	])
 
@@ -68,7 +74,7 @@ func finished_riddles():
 	$Answers/Riddle3.visible = false
 	global.animated_scene([
 		{"target": DB, "method": "show_dialogue", "args": ["Wise Man", "You have correctly answered all riddles!"]},
-		{"target": DB, "method": "show_dialogue", "args": ["Wise Man", "You may now bathe in Hero Well, Stain Man, and find your true power."]},
+		{"target": DB, "method": "show_dialogue", "args": ["Wise Man", "You may now bathe in the fountain, Stain Man, and find your true power."]},
 		{"target": self, "method": "after_questions", "args": []},
 	])
 

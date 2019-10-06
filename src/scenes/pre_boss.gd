@@ -15,4 +15,8 @@ func _ready():
 		{"target": DB, "method": "show_dialogue", "args": ["PlainMan", "Silence! I will deck you so hard you will sail off into the sun. Water terrible defeat it will be.\nYou can wave goodbye to your career. We will never sea you again!"]},
 		{"target": DB, "method": "show_dialogue", "args": ["Showboater", "Wow, you've been saving up those boat puns for a while now. I guess you're serious."]},
 		{"target": DB, "method": "show_dialogue", "args": ["PlainMan", "Let's do this!"]},
+		{"target": self, "method": "load_fight", "args": []},
 	])
+
+func load_fight():
+	get_tree().change_scene_to(load("res://scenes/bossfight.tscn"))

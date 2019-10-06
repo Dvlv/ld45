@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://script/GoingToTown.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/hubworld.png" type="Texture" id=2]
@@ -7,7 +7,7 @@
 [ext_resource path="res://scenes/DialogueBox.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 409.16, 15.301 )
+extents = Vector2( 704.364, 15.301 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 109.698, 10 )
@@ -16,7 +16,7 @@ extents = Vector2( 109.698, 10 )
 extents = Vector2( 393.864, 32.7655 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 353.15, 32.7655 )
+extents = Vector2( 353.15, 235.553 )
 
 [sub_resource type="CircleShape2D" id=5]
 radius = 195.781
@@ -24,21 +24,24 @@ radius = 195.781
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 169.408, 164.132 )
 
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 125.91, 92.0795 )
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="platforms" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 1026.72, 601.266 )
 texture = ExtResource( 2 )
 
 [node name="middle" type="StaticBody2D" parent="platforms"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/middle"]
-position = Vector2( -91.4205, -6.10352e-05 )
+position = Vector2( -376.447, -16.4045 )
 shape = SubResource( 1 )
 
 [node name="top 1" type="StaticBody2D" parent="platforms"]
+editor/display_folded = true
 position = Vector2( 577.169, -128.444 )
 __meta__ = {
 "_edit_group_": true
@@ -48,7 +51,8 @@ __meta__ = {
 shape = SubResource( 2 )
 
 [node name="top 2" type="StaticBody2D" parent="platforms"]
-position = Vector2( 911.624, -193.287 )
+editor/display_folded = true
+position = Vector2( 911.624, -209.989 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -58,7 +62,7 @@ shape = SubResource( 2 )
 
 [node name="bottom-r" type="StaticBody2D" parent="platforms"]
 editor/display_folded = true
-position = Vector2( 625.509, 340.514 )
+position = Vector2( 628.849, 303.77 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -67,7 +71,7 @@ __meta__ = {
 shape = SubResource( 3 )
 
 [node name="bottom-l" type="StaticBody2D" parent="platforms"]
-position = Vector2( -666.222, 347.916 )
+position = Vector2( -106.422, 290.501 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -76,6 +80,7 @@ __meta__ = {
 shape = SubResource( 4 )
 
 [node name="Boulder" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 644.94, 458.953 )
 scale = Vector2( 0.747409, 0.705929 )
 texture = ExtResource( 3 )
@@ -91,13 +96,47 @@ shape = SubResource( 5 )
 shape = SubResource( 6 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1200.85, 437.977 )
+position = Vector2( 1235.71, 452.331 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
+limit_left = 0
+limit_right = 2050
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="DialogueBox" parent="CanvasLayer" instance=ExtResource( 5 )]
 visible = false
+
+[node name="teleports" type="Node2D" parent="."]
+
+[node name="horse" type="Area2D" parent="teleports"]
+editor/display_folded = true
+position = Vector2( 1934.19, 287.303 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="teleports/horse"]
+shape = SubResource( 7 )
+
+[node name="chicken" type="Area2D" parent="teleports"]
+editor/display_folded = true
+position = Vector2( 1823.1, 757.725 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="teleports/chicken"]
+shape = SubResource( 7 )
+
+[node name="well" type="Area2D" parent="teleports"]
+editor/display_folded = true
+position = Vector2( 41.0169, 475.463 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="teleports/well"]
+shape = SubResource( 7 )
 

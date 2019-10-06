@@ -26,6 +26,7 @@ func _ready():
 			{"target": DB, "method": "show_dialogue", "args": ["PlainMan", "Good day!"]},
 			{"target": DB, "method": "show_dialogue", "args": ["Narrator", "Pulling such a strong horse gave PlainMan immeasurable strength increases."]},
 			{"target": DB, "method": "show_dialogue", "args": ["Narrator", "He had gained the power of super strength!"]},
+			{"target": DB, "method": "show_dialogue", "args": ["Narrator", "Now he was strong enough to move even the heaviest of boulders."]},
 			{"target": self, "method": "end_scene", "args": []},
 		])
 

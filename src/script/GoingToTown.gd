@@ -11,6 +11,12 @@ func _ready():
 	else:
 		$Boulder.queue_free()
 
+	$teleports/horse.connect("body_entered", self, "load_horse")
+	$teleports/chicken.connect("body_entered", self, "load_chicken")
+	$teleports/well.connect("body_entered", self, "load_well")
+
+	$Boulder.queue_free()
+
 
 func on_boulder(body):
 	if body.name == "Player":
@@ -49,3 +55,17 @@ func hide_boulder():
 
 func player_can_move():
 	$Player.can_move = true
+
+
+
+func load_chicken(body):
+	if body.name == "Player":
+		get_tree().change_scene_to(load("res://scenes/pre_chicken.tscn"))
+
+func load_horse(body):
+	if body.name == "Player":
+		get_tree().change_scene_to(load("res://scenes/pre_horse.tscn"))
+
+func load_well(body):
+	if body.name == "Player":
+		get_tree().change_scene_to(load("res://scenes/hero_well.tscn"))

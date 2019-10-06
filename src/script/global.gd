@@ -15,6 +15,9 @@ var has_caught_chickens = false
 var has_pulled_horse = false
 var has_moved_boulder = false
 
+var has_ans_r_1 = false
+var has_ans_r_2 = false
+
 func get_player_position():
 	return get_tree().get_root().get_node("Node2D/Player").get_global_transform().get_origin()
 
