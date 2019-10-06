@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://script/chicken_game.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/chicken-bg.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Chicken.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/sounds/chicken.ogg" type="AudioStream" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2053.16, 23.6371 )
@@ -46,6 +47,7 @@ position = Vector2( 892.051, -67.4501 )
 texture = ExtResource( 2 )
 
 [node name="Chickens" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Chicken" parent="Chickens" instance=ExtResource( 3 )]
 position = Vector2( 473.1, 75.05 )
@@ -73,6 +75,7 @@ position = Vector2( 194.241, 278.281 )
 current = true
 
 [node name="collisions" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="floor" type="StaticBody2D" parent="collisions"]
 editor/display_folded = true
@@ -213,4 +216,8 @@ margin_top = 23.6207
 margin_right = 127.064
 margin_bottom = 37.6207
 text = "Chickens Left: 6"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = 17.885
 

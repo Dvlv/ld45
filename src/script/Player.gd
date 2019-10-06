@@ -115,6 +115,7 @@ func trident():
 
 	self.add_child(trident)
 	has_trident = true
+	$AudioStreamPlayer2D.play()
 
 func on_trident_return():
 	has_trident = false

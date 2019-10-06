@@ -11,6 +11,7 @@ func _ready():
 	num_chickens_left = $Chickens.get_child_count()
 
 func on_chicken_catch():
+	$AudioStreamPlayer.play()
 	num_chickens_left = $Chickens.get_child_count() - 1
 	$CanvasLayer/Count.text = "Chickens Left: " + str(num_chickens_left)
 
