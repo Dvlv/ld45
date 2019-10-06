@@ -8,37 +8,37 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 715.083, 10 )
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 90.0255, 360.819 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 77.2479, 13.5424 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 29.8509, 17.2202 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 95.2259, 30.6382 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 45.1904, 40.3673 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 115.87, 14.905 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 113.665, 16.6042 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 95.615, 16.6042 )
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 107.056, 16.6042 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 76.6625, 16.6042 )
 
-[sub_resource type="CircleShape2D" id=11]
+[sub_resource type="CircleShape2D" id=12]
 radius = 53.2757
 
 [node name="Node2D" type="Node2D"]
@@ -69,7 +69,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/wall-l"]
-shape = SubResource( 12 )
+shape = SubResource( 2 )
 
 [node name="wall-r" type="StaticBody2D" parent="platforms"]
 editor/display_folded = true
@@ -79,7 +79,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/wall-r"]
-shape = SubResource( 12 )
+shape = SubResource( 2 )
 
 [node name="first branch" type="StaticBody2D" parent="platforms"]
 editor/display_folded = true
@@ -91,7 +91,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/first branch"]
 rotation = -5.6409
 scale = Vector2( 1.5, 1 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 one_way_collision = true
 
 [node name="nub1" type="StaticBody2D" parent="platforms"]
@@ -102,7 +102,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/nub1"]
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 one_way_collision = true
 
 [node name="nub2" type="StaticBody2D" parent="platforms"]
@@ -113,7 +113,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/nub2"]
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 one_way_collision = true
 
 [node name="bottom-curve" type="StaticBody2D" parent="platforms"]
@@ -124,7 +124,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/bottom-curve"]
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 one_way_collision = true
 
 [node name="bottom-curve2" type="StaticBody2D" parent="platforms"]
@@ -135,7 +135,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/bottom-curve2"]
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="after-curve" type="StaticBody2D" parent="platforms"]
 editor/display_folded = true
@@ -146,7 +146,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/after-curve"]
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 one_way_collision = true
 
 [node name="middle-lower" type="StaticBody2D" parent="platforms"]
@@ -158,7 +158,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/middle-lower"]
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 one_way_collision = true
 
 [node name="middle-upper" type="StaticBody2D" parent="platforms"]
@@ -170,7 +170,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/middle-upper"]
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 one_way_collision = true
 
 [node name="top" type="StaticBody2D" parent="platforms"]
@@ -193,7 +193,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/leftest"]
-shape = SubResource( 9 )
+shape = SubResource( 11 )
 one_way_collision = true
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
@@ -212,5 +212,5 @@ texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cat"]
 position = Vector2( 719.96, -242.117 )
-shape = SubResource( 11 )
+shape = SubResource( 12 )
 

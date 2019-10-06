@@ -2,9 +2,9 @@ extends KinematicBody2D
 
 var GRAVITY = 19.8
 var UP = Vector2(0, -1)
-var JUMP_STRENGTH = -375
+var JUMP_STRENGTH = -450
 var ACCELERATION = 40
-var MOVE_SPEED = 200
+var MOVE_SPEED = 300
 
 onready var SPRITE = get_node('Sprite')
 onready var TRIDENT = preload("res://scenes/Trident.tscn")
@@ -19,7 +19,7 @@ var move = Vector2(0, GRAVITY)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if global.has_power(global.JUMP):
-		JUMP_STRENGTH = -750
+		JUMP_STRENGTH = -900
 	if global.has_power(global.LASER):
 		can_laser = true
 

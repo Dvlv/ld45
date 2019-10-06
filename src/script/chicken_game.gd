@@ -12,6 +12,7 @@ func _ready():
 
 func on_chicken_catch():
 	num_chickens_left = $Chickens.get_child_count() - 1
+	$CanvasLayer/Count.text = "Chickens Left: " + str(num_chickens_left)
 
 	if num_chickens_left == 0:
 		end_scene()
