@@ -68,7 +68,7 @@ func finished_riddles():
 	$Answers/Riddle3.visible = false
 	global.animated_scene([
 		{"target": DB, "method": "show_dialogue", "args": ["Wise Man", "You have correctly answered all riddles!"]},
-		{"target": DB, "method": "show_dialogue", "args": ["Wise Man", "You may now bathe in Hero Well, and find your true power."]},
+		{"target": DB, "method": "show_dialogue", "args": ["Wise Man", "You may now bathe in Hero Well, Stain Man, and find your true power."]},
 		{"target": self, "method": "after_questions", "args": []},
 	])
 
@@ -97,6 +97,8 @@ func after_questions():
 		{"target": self, "method": "close_up", "args": []},
 		{"target": DB, "method": "show_dialogue", "args": ["PlainMan", "I feel so powerful!\nHaha, Hahaha, AHAHAHAHAHAHAHAHAH!!!"]},
 		{"target": DB, "method": "show_dialogue", "args": ["PlainMan", "Look out Showboater, here I come!"]},
+		{"target": DB, "method": "show_dialogue", "args": ["Narrator", "You can now press the A button to throw your trident"]},
+		{"target": DB, "method": "show_dialogue", "args": ["PlainMan", "At Showboater! Press A to throw the trident at Showboater!"]},
 		{"target": self, "method": "end_scene", "args": []},
 	])
 
@@ -118,4 +120,4 @@ func load_main_scene():
 
 func end_scene():
 	global.give_power(global.LASER)
-	# load showboater scene
+	get_tree().change_scene_to(load("res://scenes/pre_boss.tscn"))

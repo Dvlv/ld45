@@ -71,6 +71,7 @@ func set_current_key():
 
 func end_scene():
 	global.give_power(global.SUPER_STRENGTH)
-	print("over")
+	global.has_pulled_horse = true
+	get_tree().change_scene_to(load("res://scenes/pre_horse.tscn"))
 
 

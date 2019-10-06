@@ -16,7 +16,7 @@ var has_pulled_horse = false
 var has_moved_boulder = false
 
 func get_player_position():
-	return get_tree().get_root().get_node("/Node2D/Player").get_global_transform().get_origin()
+	return get_tree().get_root().get_node("Node2D/Player").get_global_transform().get_origin()
 
 func give_power(pwr):
 	powers.append(pwr)

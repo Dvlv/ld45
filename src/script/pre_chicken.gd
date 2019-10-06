@@ -27,7 +27,11 @@ func _ready():
 			{"target": DB, "method": "show_dialogue", "args": ["Narrator", "PlainMan dashed off to find his next adventure."]},
 			{"target": DB, "method": "show_dialogue", "args": ["Narrator", "All of that jumping seemed to have made his legs much stronger."]},
 			{"target": DB, "method": "show_dialogue", "args": ["Narrator", "PlainMan had gained the ability to super jump. Now his leaps would be much higher."]},
+			{"target": self, "method": "end_scene", "args": []},
 		])
 
 func play_chicken():
 	get_tree().change_scene_to(load("res://scenes/chicken_game.tscn"))
+
+func end_scene():
+	get_tree().change_scene_to(load("res://scenes/GoingToTown.tscn"))

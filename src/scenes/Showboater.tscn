@@ -1,18 +1,25 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://script/Showboater.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/showboater.png" type="Texture" id=2]
 
-[node name="Showboater" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 81.6171, 93.2765 )
+
+[node name="Showboater" type="Area2D"]
 position = Vector2( 167.541, 504.055 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 
 [node name="attacktimer" type="Timer" parent="."]
+wait_time = 1.75
 autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="colourtimer" type="Timer" parent="."]
+wait_time = 0.5
 

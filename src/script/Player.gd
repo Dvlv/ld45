@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal player_dmg
+
 var GRAVITY = 19.8
 var UP = Vector2(0, -1)
 var JUMP_STRENGTH = -450
@@ -19,12 +21,15 @@ var move = Vector2(0, GRAVITY)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if global.has_power(global.JUMP):
-		JUMP_STRENGTH = -900
+		JUMP_STRENGTH = -650
 	if global.has_power(global.LASER):
 		can_laser = true
 
 	if is_facing_left:
 		SPRITE.flip_h = true
+
+	$Area2D.connect("area_entered", self, "on_area_enter")
+	$colourtimer.connect("timeout", self, "revert_colour")
 
 
 #warning-ignore:unused_argument
@@ -116,3 +121,14 @@ func on_trident_return():
 
 func face_left():
 	SPRITE.flip_h = true
+
+
+func on_area_enter(area):
+	if area.name == "Wave" or area.name == "Showboater":
+		emit_signal("player_dmg")
+		$Sprite.modulate = "808000"
+		$colourtimer.start()
+
+func revert_colour():
+	$Sprite.modulate = "ffffff"
+

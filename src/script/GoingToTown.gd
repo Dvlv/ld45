@@ -11,7 +11,6 @@ func _ready():
 	else:
 		$Boulder.queue_free()
 
-	$Player.can_laser = true
 
 func on_boulder(body):
 	if body.name == "Player":
