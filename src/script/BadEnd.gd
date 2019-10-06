@@ -12,7 +12,7 @@ func _ready():
 		{"target": DB, "method": "show_dialogue", "args": ["PlainMan", "Hush puny mortal! You bow to PlainMan now! Beg for mercy!"]},
 		{"target": DB, "method": "show_dialogue", "args": ["Narrator", "And so, PlainMan accomplished his goal of besting Showboater."]},
 		{"target": DB, "method": "show_dialogue", "args": ["Narrator", "However, in the process, he lost sight of his goal to become a hero, and instead became"]},
-		{"target": DB, "method": "show_dialogue", "args": ["Narrator", "PlainMan - World's Deadliest Supervillain!"]},
+		{"target": DB, "method": "show_dialogue", "args": ["Narrator", "PainMan - World's Deadliest Supervillain!"]},
 		{"target": self, "method": "end", "args": []},
 	])
 
