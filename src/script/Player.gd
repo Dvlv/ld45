@@ -64,6 +64,9 @@ func _physics_process(delta):
 					air_move_left()
 			elif Input.is_action_pressed("ui_right"):
 				air_move_right()
+			elif Input.is_action_pressed("ui_attack") and can_laser:
+				if not has_trident:
+					trident()
 
 		if SPRITE.animation != "jump":
 			SPRITE.play("jump")
@@ -127,7 +130,6 @@ func face_left():
 
 
 func on_area_enter(area):
-
 	if "Wave" in area.name or area.name == "Showboater":
 		emit_signal("player_dmg")
 		$Sprite.modulate = "808000"

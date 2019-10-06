@@ -64,6 +64,7 @@ func _input(event):
 func begin():
 	randomize()
 	$CurrentKey.visible = true
+	$CurrentKey/AnimationPlayer.play("pulse")
 	set_current_key()
 	ks.connect("timeout", self, "set_current_key")
 	ks.start()

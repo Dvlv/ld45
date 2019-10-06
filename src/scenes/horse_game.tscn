@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://script/horse_game.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/chicken-bg.png" type="Texture" id=2]
@@ -6,6 +6,24 @@
 [ext_resource path="res://assets/art/key_k.svg" type="Texture" id=4]
 [ext_resource path="res://assets/ubuntu-df.tres" type="DynamicFont" id=5]
 [ext_resource path="res://assets/sounds/horse.ogg" type="AudioStream" id=6]
+
+[sub_resource type="Animation" id=5]
+resource_name = "pulse"
+length = 0.5
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.75, 0.75 ), Vector2( 1, 1 ) ]
+}
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://assets/Ubuntu-R.ttf"
@@ -50,7 +68,11 @@ one_shot = true
 
 [node name="CurrentKey" type="Sprite" parent="."]
 position = Vector2( 510.922, 146.817 )
+scale = Vector2( 0.977683, 0.977683 )
 texture = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CurrentKey"]
+anims/pulse = SubResource( 5 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 298.662
