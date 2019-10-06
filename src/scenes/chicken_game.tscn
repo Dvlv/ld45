@@ -11,31 +11,31 @@ extents = Vector2( 2053.16, 23.6371 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 260.537, 225.509 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 203.081, 15.6158 )
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 96.972, 15.6158 )
-
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 132.774, 10 )
+extents = Vector2( 96.972, 15.6158 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 132.774, 10 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 196.819, 182.038 )
+extents = Vector2( 132.774, 10 )
 
 [sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 196.819, 182.038 )
+
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 98.5591, 20.9776 )
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 69.6691, 36.8988 )
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 220.001, 136.37 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 98.5591, 20.9776 )
 
 [node name="Node2D" type="Node2D"]
@@ -67,7 +67,7 @@ position = Vector2( -120.88, 57.4677 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 editor/display_folded = true
-position = Vector2( 224.304, 209.803 )
+position = Vector2( 194.241, 278.281 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
@@ -101,7 +101,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="collisions/hay 1"]
-shape = SubResource( 9 )
+shape = SubResource( 3 )
 
 [node name="hay 2" type="StaticBody2D" parent="collisions"]
 editor/display_folded = true
@@ -111,7 +111,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="collisions/hay 2"]
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="hay 3" type="StaticBody2D" parent="collisions"]
 position = Vector2( 856.916, 184.966 )
@@ -120,32 +120,30 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="collisions/hay 3"]
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="roof" type="StaticBody2D" parent="collisions"]
 editor/display_folded = true
 position = Vector2( 1073.64, 65.8215 )
 rotation = -0.436332
-scale = Vector2( 1, 1 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="collisions/roof"]
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 one_way_collision = true
 
 [node name="roof2" type="StaticBody2D" parent="collisions"]
 editor/display_folded = true
 position = Vector2( 1301.5, 67.7685 )
 rotation = 0.436332
-scale = Vector2( 1, 1 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="collisions/roof2"]
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 one_way_collision = true
 
 [node name="righthay" type="StaticBody2D" parent="collisions"]
@@ -156,7 +154,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="collisions/righthay"]
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="collisions"]
 editor/display_folded = true
@@ -166,7 +164,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="collisions/StaticBody2D"]
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="collisions"]
 editor/display_folded = true
@@ -176,7 +174,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="collisions/StaticBody2D5"]
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="collisions"]
 position = Vector2( 1481, 300.899 )
@@ -186,7 +184,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="collisions/StaticBody2D4"]
-shape = SubResource( 11 )
+shape = SubResource( 9 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="collisions"]
 position = Vector2( 1187.67, 239.742 )
@@ -205,7 +203,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="collisions/StaticBody2D2"]
-shape = SubResource( 8 )
+shape = SubResource( 11 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

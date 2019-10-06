@@ -18,7 +18,7 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 431.155, 477.426 )
+position = Vector2( 433.598, 496.16 )
 scale = Vector2( 0.33, 0.33 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -29,7 +29,7 @@ limit_right = 1475
 limit_bottom = 750
 
 [node name="Showboater" parent="." instance=ExtResource( 4 )]
-position = Vector2( 874.936, 458.232 )
+position = Vector2( 838.283, 491.627 )
 scale = Vector2( 0.75, 0.75 )
 
 [node name="collisions" type="Node2D" parent="."]
