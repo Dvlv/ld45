@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://script/Title.gd" type="Script" id=1]
+[ext_resource path="res://assets/art/chicken-bg.png" type="Texture" id=2]
+[ext_resource path="res://assets/art/plainman-front.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://assets/Ubuntu-R.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 80
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 31
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 1 )
+
+[node name="Title" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="chicken-bg" type="Sprite" parent="Sprite"]
+position = Vector2( 465.674, 227.498 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Sprite"]
+position = Vector2( 307.788, 389.604 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 440.253
+margin_top = 21.4282
+margin_right = 777.253
+margin_bottom = 112.428
+custom_fonts/font = SubResource( 2 )
+text = "PlainMan"
+
+[node name="Button" type="Button" parent="."]
+margin_left = 534.127
+margin_top = 160.381
+margin_right = 695.127
+margin_bottom = 230.381
+custom_fonts/font = SubResource( 3 )
+text = "Start"
+

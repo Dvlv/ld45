@@ -54,8 +54,10 @@ func _input(event):
 
 		else:
 			correct_counter -= 1
+			if correct_counter < 0:
+				correct_counter = 0
 
-		$Progress.text = "Progress: " + str(correct_counter) + "/50"
+		$ProgressBar.value = 2 * correct_counter
 		if correct_counter > correct_limit:
 			end_scene()
 

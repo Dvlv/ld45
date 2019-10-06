@@ -19,4 +19,4 @@ func _ready():
 	])
 
 func end():
-	get_tree().change_scene_to(load("res://scenes/thanks.tscn"))
+	get_tree().change_scene_to(load("res://scenes/end.tscn"))

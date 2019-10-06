@@ -18,7 +18,7 @@ func _ready():
 		{"target": self, "method": "change_bg", "args": ["res://assets/art/fmv/intro-pm-costume.png"]},
 		{"target": DB, "method": "show_dialogue", "args": ["Narrator", "The cat scratch had given PlainMan a superpower."]},
 		{"target": DB, "method": "show_dialogue", "args": ["Narrator", "However, it was only the power to earn other superpowers by working hard."]},
-		{"target": DB, "method": "show_dialogue", "args": ["Narrator", "Unphased, PlainMan headed to the location of Hero Well."]},
+		{"target": DB, "method": "show_dialogue", "args": ["Narrator", "Unfazed, PlainMan headed to the location of Hero Well."]},
 		{"target": DB, "method": "show_dialogue", "args": ["Narrator", "Luckily for him, there was a nearby farm where he could train to earn some powers."]},
 		{"target": self, "method": "load_hub", "args": []},
 	])

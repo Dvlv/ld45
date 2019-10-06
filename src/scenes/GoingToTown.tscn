@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://script/GoingToTown.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/hubworld.png" type="Texture" id=2]
 [ext_resource path="res://assets/art/rock.png" type="Texture" id=3]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/DialogueBox.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/art/chicken-1.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 704.364, 15.301 )
@@ -139,4 +140,10 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="teleports/well"]
 shape = SubResource( 7 )
+
+[node name="chicken-1" type="Sprite" parent="."]
+position = Vector2( 1885.77, 809.722 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 6 )
+flip_h = true
 
