@@ -4,6 +4,7 @@ onready var DB = $CanvasLayer/DialogueBox
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$AudioStreamPlayer2D.play()
 	global.animated_scene([
 		{"target": DB, "method": "show_dialogue", "args": ["PlainMan", "SHOWBOATER! We meet at last."]},
 		{"target": DB, "method": "show_dialogue", "args": ["Showboater", "Ugh, if you want an autograph you have to see me at an event..."]},

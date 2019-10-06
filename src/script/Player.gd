@@ -120,7 +120,7 @@ func trident():
 
 	self.add_child(trident)
 	has_trident = true
-	$AudioStreamPlayer2D.play()
+	$trident.play()
 
 func on_trident_return():
 	has_trident = false
@@ -132,6 +132,7 @@ func face_left():
 func on_area_enter(area):
 	if "Wave" in area.name or area.name == "Showboater":
 		emit_signal("player_dmg")
+		$hit.play()
 		$Sprite.modulate = "808000"
 		$colourtimer.start()
 		if "Wave" in area.name:

@@ -14,6 +14,7 @@ func _ready():
 	$teleports/horse.connect("body_entered", self, "load_horse")
 	$teleports/chicken.connect("body_entered", self, "load_chicken")
 	$teleports/well.connect("body_entered", self, "load_well")
+	$AudioStreamPlayer2D.play()
 
 
 

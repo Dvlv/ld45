@@ -3,6 +3,7 @@ extends Node2D
 var num_chickens_left = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$bgm.play()
 	for chicken in $Chickens.get_children():
 		chicken.connect("body_entered", chicken, "on_touch")
 

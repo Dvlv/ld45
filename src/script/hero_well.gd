@@ -5,7 +5,7 @@ onready var DB = $CanvasLayer/DialogueBox
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-
+	$AudioStreamPlayer2D.play()
 	bind_buttons()
 
 	if global.has_ans_r_2:
@@ -99,7 +99,7 @@ func after_questions():
 		{"target": DB, "method": "show_dialogue", "args": ["Narrator", "After this realisation, a large glowing trident appeared in front of PlainMan."]},
 		{"target": self, "method": "show_trident", "args": []},
 		{"target": DB, "method": "show_dialogue", "args": ["PlainMan", "Neat."]},
-		{"target": DB, "method": "show_dialogue", "args": ["Narrator", "PlainMan picked up the trident, and felt a strong power seep through his body."]},
+		{"target": DB, "method": "show_dialogue", "args": ["Narrator", "PlainMan picked up the trident, and felt a strong power surge through his body."]},
 		{"target": self, "method": "close_up", "args": []},
 		{"target": DB, "method": "show_dialogue", "args": ["PlainMan", "I feel so powerful!\nHaha, Hahaha, AHAHAHAHAHAHAHAHAH!!!"]},
 		{"target": DB, "method": "show_dialogue", "args": ["PlainMan", "Look out Showboater, here I come!"]},

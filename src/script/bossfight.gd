@@ -9,6 +9,7 @@ var next_spawn = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$AudioStreamPlayer2D.play()
 	$Player.JUMP_STRENGTH = -650
 	$Player.can_laser = true
 

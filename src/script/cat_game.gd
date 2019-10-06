@@ -5,6 +5,7 @@ onready var DB = $CanvasLayer/DialogueBox
 
 func _ready():
 	$Player.JUMP_STRENGTH = -475
+	$AudioStreamPlayer2D.play()
 
 	$cat.connect("body_entered", self, "on_touch_cat")
 

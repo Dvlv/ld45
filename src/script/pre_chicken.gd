@@ -4,6 +4,7 @@ onready var DB = $CanvasLayer/DialogueBox
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$AudioStreamPlayer2D.play()
 	if not global.has_caught_chickens:
 		global.animated_scene([
 			{"target": DB, "method": "show_dialogue", "args": ["Farmer", "Gee, you gotta help me mister."]},

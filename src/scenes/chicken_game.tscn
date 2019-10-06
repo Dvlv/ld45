@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://script/chicken_game.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/chicken-bg.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/ubuntu-df.tres" type="DynamicFont" id=5]
 [ext_resource path="res://assets/sounds/chicken.ogg" type="AudioStream" id=6]
+[ext_resource path="res://assets/sounds/chicken.wav" type="AudioStream" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2053.16, 23.6371 )
@@ -222,4 +223,7 @@ text = "Chickens Left: 6"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 volume_db = 17.885
+
+[node name="bgm" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
 

@@ -25,13 +25,14 @@ func attack():
 	new_wave.position = Vector2(0, 0)
 	self.add_child(new_wave)
 	new_wave.moves = true
-	$AudioStreamPlayer2D.play()
+	$atk.play()
 
 func take_dmg_from_trident(area):
 	if area.name == "Trident":
 		$Sprite.modulate = "803000"
 		$colourtimer.start()
 		emit_signal("showboater_dmg")
+		$hit.play()
 
 func revert_colour():
 	$Sprite.modulate = "ffffff"

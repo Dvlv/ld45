@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://script/hero_well.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/well-1.png" type="Texture" id=2]
 [ext_resource path="res://assets/art/civ-orange.png" type="Texture" id=3]
 [ext_resource path="res://assets/art/plainman-front.png" type="Texture" id=4]
 [ext_resource path="res://scenes/DialogueBox.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/ubuntu-df.tres" type="DynamicFont" id=6]
+[ext_resource path="res://assets/sounds/mysterySlow.wav" type="AudioStream" id=7]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -28,9 +30,9 @@ texture = ExtResource( 4 )
 [node name="DialogueBox" parent="CanvasLayer" instance=ExtResource( 5 )]
 
 [node name="Answers" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Riddle1" type="CenterContainer" parent="Answers"]
+editor/display_folded = true
 visible = false
 margin_right = 1025.0
 margin_bottom = 599.0
@@ -42,32 +44,35 @@ margin_right = 542.0
 margin_bottom = 337.0
 
 [node name="Button" type="Button" parent="Answers/Riddle1/VBoxContainer"]
-margin_right = 90.0
+margin_right = 59.0
 margin_bottom = 20.0
+custom_fonts/font = ExtResource( 6 )
 text = "A Fly"
 
 [node name="MarginContainer" type="MarginContainer" parent="Answers/Riddle1/VBoxContainer"]
 margin_top = 24.0
-margin_right = 90.0
+margin_right = 59.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Button2" type="Button" parent="Answers/Riddle1/VBoxContainer"]
 margin_top = 28.0
-margin_right = 90.0
+margin_right = 59.0
 margin_bottom = 48.0
+custom_fonts/font = ExtResource( 6 )
 text = "A Clock"
 
 [node name="MarginContainer2" type="MarginContainer" parent="Answers/Riddle1/VBoxContainer"]
 margin_top = 52.0
-margin_right = 90.0
+margin_right = 59.0
 margin_bottom = 52.0
 
 [node name="Button3" type="Button" parent="Answers/Riddle1/VBoxContainer"]
 margin_top = 56.0
-margin_right = 90.0
+margin_right = 59.0
 margin_bottom = 76.0
+custom_fonts/font = ExtResource( 6 )
 text = "A Cat"
 
 [node name="Riddle2" type="CenterContainer" parent="Answers"]
@@ -84,6 +89,7 @@ margin_bottom = 337.0
 [node name="Button" type="Button" parent="Answers/Riddle2/VBoxContainer"]
 margin_right = 90.0
 margin_bottom = 20.0
+custom_fonts/font = ExtResource( 6 )
 text = "A Penguin Wearing Sunglasses"
 
 [node name="MarginContainer" type="MarginContainer" parent="Answers/Riddle2/VBoxContainer"]
@@ -97,6 +103,7 @@ size_flags_vertical = 3
 margin_top = 28.0
 margin_right = 90.0
 margin_bottom = 48.0
+custom_fonts/font = ExtResource( 6 )
 text = "A Zebra in the Desert"
 
 [node name="MarginContainer2" type="MarginContainer" parent="Answers/Riddle2/VBoxContainer"]
@@ -108,6 +115,7 @@ margin_bottom = 52.0
 margin_top = 56.0
 margin_right = 90.0
 margin_bottom = 76.0
+custom_fonts/font = ExtResource( 6 )
 text = "A Newspaper"
 
 [node name="Riddle3" type="CenterContainer" parent="Answers"]
@@ -124,6 +132,7 @@ margin_bottom = 337.0
 [node name="Button" type="Button" parent="Answers/Riddle3/VBoxContainer"]
 margin_right = 90.0
 margin_bottom = 20.0
+custom_fonts/font = ExtResource( 6 )
 text = "11 Meters"
 
 [node name="MarginContainer" type="MarginContainer" parent="Answers/Riddle3/VBoxContainer"]
@@ -137,6 +146,7 @@ size_flags_vertical = 3
 margin_top = 28.0
 margin_right = 90.0
 margin_bottom = 48.0
+custom_fonts/font = ExtResource( 6 )
 text = "7 Meters"
 
 [node name="MarginContainer2" type="MarginContainer" parent="Answers/Riddle3/VBoxContainer"]
@@ -148,5 +158,9 @@ margin_bottom = 52.0
 margin_top = 56.0
 margin_right = 90.0
 margin_bottom = 76.0
+custom_fonts/font = ExtResource( 6 )
 text = "3 Meters"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
 

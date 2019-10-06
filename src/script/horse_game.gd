@@ -29,6 +29,7 @@ var current_horse_anim = "horse-1"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$bgm.play()
 	$CurrentKey.visible = false
 	rb.connect("timeout", self, "begin")
 	set_process_input(true)
